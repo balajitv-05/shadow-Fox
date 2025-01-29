@@ -9,15 +9,15 @@ public class Main {
 	static Scanner s = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		int n;
 		
-		
-		while(true)
+		do
 		{
 		System.out.println("Enter the corresponding value"+'\n'+"\t1.Create"+'\n'+"\t2.Read"+'\n'+"\t3.Update"+'\n'+"\t4.Delete");
-		int n8 =s.nextInt();
+		 n =s.nextInt();
 		s.nextLine();
 		
-		switch(n8)
+		switch(n)
 		{
 		case 1:
 			create();
@@ -31,9 +31,11 @@ public class Main {
 		case 4:
 			delete();
 			break;
+		case 5:
+			System.out.println("Exited.");
 			
 		}
-	}
+	}while(n != 5);
 		
 	}
 		
@@ -59,6 +61,7 @@ public class Main {
 		Name.add(n1);
 		MobileNumber.add(n2);
 		Email.add(n3);
+		System.out.println("Successfully created the contact");
 		System.out.println("Enter True or False"+'\n'+" true == Create a new Contact \tfalse == Exit");
 		i = s.nextBoolean(); 
 		s.nextLine();
@@ -67,8 +70,7 @@ public class Main {
 		System.out.println("Successfully saved");
 		}
 		
-//		read();
-//		System.out.println(Email.get(0));
+
 		
 	
 	static void update() {	
@@ -77,6 +79,8 @@ public class Main {
 		
 		System.out.println("Enter the index of the contact to be edited: ");
 		int n5 = s.nextInt();
+		if(Name.size()>n5)
+		{
 		System.out.println("Enter the content of the contact to be updated: "+'\n'+"\t1.Name"+'\n'+"\t2.Mobile number"+'\n'+"\t3.Email");
 		int n6 =s.nextInt();
 		s.nextLine();
@@ -101,18 +105,30 @@ public class Main {
 			System.out.println("Enter 1 2 3 accordingly to update the Name, Mobile number and Email");
 			break;
 			}
+		}
+		else
+		{
+			System.out.println("Enter the valid index of the contact to be updated");
+		}
 	}
 		
 		
 	static void delete()
 		{
 			read();
-			System.out.println("Enter the index to be deleted: ");  //Enter the 
+			System.out.println("Enter the index to be deleted: ");  
 			int n7 = s.nextInt();
+			if(Name.size() > n7)
+			{
 			Name.remove(n7);
 			MobileNumber.remove(n7);
 			Email.remove(n7);
 			System.out.println("Successfully deleted");
+			}
+			else
+			{
+				System.out.println("Enter a valid index to be deleted");
+			}
 		}
 		
 		
