@@ -11,13 +11,13 @@ public class calc {
 		double c;
 		int n = 0;
 		
-		int i = n;
+	
 		
 
 		
-		while (i>=0)
+		do 
 		{
-		System.out.println("Select the value to be performed: "+'\n'+"\t1.Addition" +'\n'+ "\t2.Subtraction"+'\n'+"\t3.Multiplication"+'\n'+ "\t4.Division" +'\n'+  "\t5.Square Root" +'\n'+  "\t6.Logarithmic" +'\n'+ "\t7.Exponentiation" +'\n'+ "\t8.Temperature conversion");
+		System.out.println("Select the value to be performed: "+'\n'+"\t1.Addition" +'\n'+ "\t2.Subtraction"+'\n'+"\t3.Multiplication"+'\n'+ "\t4.Division" +'\n'+  "\t5.Square Root" +'\n'+  "\t6.Logarithmic" +'\n'+ "\t7.Exponentiation" +'\n'+ "\t8.Temperature conversion"+'\n'+"\t9.Exit");
 		
 		n = s.nextInt();
 
@@ -37,13 +37,29 @@ public class calc {
 			System.out.println(o3);
 			break;
 		case 4 : 
-			double o4 = div();
-			System.out.println(o4);
+			System.out.println("Enter the two values to be divided: ");
+			double a1 = s.nextDouble();
+			double b1 = s.nextDouble();
+			if(b1 !=0)
+				{	
+				double o4 = div(a1,b1);
+				System.out.println(o4);
+				}
+			else {
+				System.out.println("Divisor must be a positive number and not be a zero '0'");
+			}
 			break;
 		case 5:
 			c = s.nextDouble();
+			if (c > 0)
+			{
 			double sq =sqrot(c);
 			System.out.println(sq);
+			}
+			else
+			{
+			System.out.println("Enter a positive number to take square root");
+			}
 			break;
 		case 6:
 			double o6 =log();
@@ -58,10 +74,15 @@ public class calc {
 			double o5 = temp();
 			System.out.println(o5);
 			break;
-		
+		case 9:
+			System.out.println("Exited the program"+'\n'+"Thank You!");
+			break;
+		default:
+			System.out.println("Enter a valid number to perform calculations and conversions ");
+			break;
 			
 		}
-		}
+		}while (n!=9);
 		
 
 	}
@@ -88,12 +109,10 @@ public class calc {
 		return a*b;
 		
 	}
-	static double div()
+	static double div(double a,double b)
 	{
-		System.out.println("Enter the two values to be divided: ");
-		double a = s.nextDouble();
-		double b = s.nextDouble();
 		return a/b;
+		
 	}
 	static double sqrot(double a)
 	{
