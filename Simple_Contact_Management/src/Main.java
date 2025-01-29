@@ -13,7 +13,7 @@ public class Main {
 		
 		do
 		{
-		System.out.println("Enter the corresponding value"+'\n'+"\t1.Create"+'\n'+"\t2.Read"+'\n'+"\t3.Update"+'\n'+"\t4.Delete");
+		System.out.println("Enter the corresponding value"+'\n'+"\t1.Create"+'\n'+"\t2.Read"+'\n'+"\t3.Update"+'\n'+"\t4.Delete"+'\n'+"\t5.Exit");
 		 n =s.nextInt();
 		s.nextLine();
 		
