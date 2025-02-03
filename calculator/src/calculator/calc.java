@@ -50,6 +50,7 @@ public class calc {
 			}
 			break;
 		case 5:
+			System.out.println("Enter the value to Square Root: ");
 			c = s.nextDouble();
 			if (c > 0)
 			{
@@ -116,7 +117,7 @@ public class calc {
 	}
 	static double sqrot(double a)
 	{
-		System.out.println("Enter the value to Square Root: ");
+		
 		double b=Math.sqrt(a);
 		return b;
 		
